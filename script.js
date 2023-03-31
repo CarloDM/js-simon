@@ -25,7 +25,7 @@ setTimeout(function () {output.innerHTML=' '},4900)
 setTimeout(function(){
   // inserisci numeri
   while (numInseriti.length < numNum) {
-    numInsert() 
+    numInsert(numInseriti) 
   }
   console.log(numInseriti)
   
@@ -54,13 +54,15 @@ function numVerifica(a,b) {
   }
 }
 
-function numInsert(){
+function numInsert(inseriti){
   numA = prompt('inserisci numero');
-  if (numRicordati.includes(numA)) {
-    console.log('gia inserito inserire un altro');
+  console.log(inseriti.includes(parseInt(numA)))
+  if (inseriti.includes(parseInt(numA))) {
+    alert('NUMERO GIA INSERITO INSERIRNE UNO DIVERSO');
   }else{
     numInseriti.push(parseInt(numA))
   }
+  console.log(inseriti)
 }
 
 function numGen(numEstrt) {
