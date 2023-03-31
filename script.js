@@ -25,22 +25,23 @@ timeB = document.getElementById('timeBar')
   setTimeout(function(){timeB.style.width = '0vw'},4900)
   
 //  cancella i numeri dallo schermo
-setTimeout(function () {output.innerHTML=' '},4900)
+  setTimeout(function () {output.innerHTML=' '},4900)
 
-// chiedi i numeri che ricorda
-setTimeout(function(){
+
+// chiedi i numeri che ricorda --------------------->
+  setTimeout(function(){
 
   // inserisci numeri
-  while (numInseriti.length < numNum) {
-    numInsert(numInseriti) 
-  } 
+  while (numInseriti.length < numNum) {numInsert(numInseriti)}
+  
   // verifica numeri
   numVerifica(numEstratti,numInseriti)
 
 // restituisci risultato
   risultato(output,numNum,punteggio,numRicordati);
 },5000)
-// -----------fine-------------------
+//                  <----------fine-------------------
+
 
 
 // -----------funzioni----------------
