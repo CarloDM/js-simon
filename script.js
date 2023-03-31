@@ -8,6 +8,9 @@
 let 
 numEstratti = [],
 numInseriti = [];
+numRicordati = [] ;
+punteggio = 0;
+
 output = document.querySelector('h1')
 
 for (let i = 0; i < 5; i++) {numGen()}
@@ -16,16 +19,15 @@ numInsert()
 console.log(numInseriti)
 
 numVerifica(numEstratti,numInseriti)
+
 function numVerifica(a,b) {
-  
+  for (let i = 0; i < 5 ; i++) {
+    if(a.includes(b[i])){
+      punteggio++
+      numRicordati.push(b[i])
+    }   
+  }
 }
-
-
-
-
-
-
-
 
 function numInsert(){
   numA = 5;
