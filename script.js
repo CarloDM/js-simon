@@ -12,11 +12,16 @@ numEstratti = [],
 numInseriti = [];
 numRicordati = [] ;
 punteggio = 0;
-
+timeB = document.getElementById('timeBar')
 
   // genera numeri e stampa
   while (numEstratti.length < numNum) {numGen(numEstratti)}
-  console.log(numEstratti)
+  setTimeout(function(){timeB.style.height = '80px'},980)
+  setTimeout(function(){timeB.style.height = '60px'},1960)
+  setTimeout(function(){timeB.style.height = '40px'},2940)
+  setTimeout(function(){timeB.style.height = '20px'},3920)
+  setTimeout(function(){timeB.style.height = '0px'},4900)
+  
 
 //  cancella i numeri dallo schermo
 setTimeout(function () {output.innerHTML=' '},4900)
@@ -27,7 +32,6 @@ setTimeout(function(){
   while (numInseriti.length < numNum) {
     numInsert(numInseriti) 
   }
-  console.log(numInseriti)
   
   // verifica numeri
   numVerifica(numEstratti,numInseriti)
@@ -40,7 +44,7 @@ setTimeout(function(){
 function risultato(out,n,punt,ricordati) {
   if (ricordati == 0){out.innerHTML =`non hai ricordato nessun numero`}
   else {
-    out.innerHTML =`hai ricordato ${punt} su ${n} <br> i numeri ricordati sono: <br> ${ricordati}`
+    out.innerHTML =`hai ricordato ${punt} numeri su ${n} <br> i numeri ricordati sono: <br> ${ricordati}`
 
   }
 }
@@ -56,13 +60,11 @@ function numVerifica(a,b) {
 
 function numInsert(inseriti){
   numA = prompt('inserisci numero');
-  console.log(inseriti.includes(parseInt(numA)))
   if (inseriti.includes(parseInt(numA))) {
     alert('NUMERO GIA INSERITO INSERIRNE UNO DIVERSO');
   }else{
     numInseriti.push(parseInt(numA))
   }
-  console.log(inseriti)
 }
 
 function numGen(numEstrt) {
