@@ -16,36 +16,39 @@ timeB = document.getElementById('timeBar')
 
   // genera numeri e stampa
   while (numEstratti.length < numNum) {numGen(numEstratti)}
-  setTimeout(function(){timeB.style.height = '80px'},980)
-  setTimeout(function(){timeB.style.height = '60px'},1960)
-  setTimeout(function(){timeB.style.height = '40px'},2940)
-  setTimeout(function(){timeB.style.height = '20px'},3920)
-  setTimeout(function(){timeB.style.height = '0px'},4900)
-  
 
+  // time bar
+  setTimeout(function(){timeB.style.width = '75vw'},980)
+  setTimeout(function(){timeB.style.width = '55vw'},1960)
+  setTimeout(function(){timeB.style.width = '35vw'},2940)
+  setTimeout(function(){timeB.style.width = '10vw'},3920)
+  setTimeout(function(){timeB.style.width = '0vw'},4900)
+  
 //  cancella i numeri dallo schermo
 setTimeout(function () {output.innerHTML=' '},4900)
 
 // chiedi i numeri che ricorda
 setTimeout(function(){
+
   // inserisci numeri
   while (numInseriti.length < numNum) {
     numInsert(numInseriti) 
-  }
-  
+  } 
   // verifica numeri
   numVerifica(numEstratti,numInseriti)
 
 // restituisci risultato
   risultato(output,numNum,punteggio,numRicordati);
 },5000)
+// -----------fine-------------------
 
+
+// -----------funzioni----------------
 
 function risultato(out,n,punt,ricordati) {
   if (ricordati == 0){out.innerHTML =`non hai ricordato nessun numero`}
   else {
     out.innerHTML =`hai ricordato ${punt} numeri su ${n} <br> i numeri ricordati sono: <br> ${ricordati}`
-
   }
 }
 
@@ -68,7 +71,7 @@ function numInsert(inseriti){
 }
 
 function numGen(numEstrt) {
-  R = Math.floor(Math.random()*50)
+  R = Math.floor(Math.random()*100)
   if (numEstratti.includes(R)){
   }else{
     numEstratti.push(R)
