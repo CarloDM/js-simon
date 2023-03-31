@@ -6,19 +6,34 @@
  */
 
 let 
+output = document.querySelector('h1')
+numNum = parseInt(prompt('quanti numeri vuoi ricordare?'))
 numEstratti = [],
 numInseriti = [];
 numRicordati = [] ;
 punteggio = 0;
 
-output = document.querySelector('h1')
+// genera numeri
+while (numEstratti.length < numNum) {numGen()}
+console.log(numEstratti)
 
-for (let i = 0; i < 5; i++) {numGen()}
-
-numInsert()
+// inserisci numeri
+while (numInseriti.length < numNum) {
+  numInsert() 
+}
 console.log(numInseriti)
 
+// verifica numeri
 numVerifica(numEstratti,numInseriti)
+
+risultato(output,numNum,punteggio,numRicordati);
+function risultato(out,n,punt,ricordati) {
+  if (ricordati == 0){out.innerHTML =`non hai ricordato nessun numero`}
+  else {
+    out.innerHTML =`hai ricordato ${punt} su ${n} <br> i numeri ricordati sono: <br> ${ricordati}`
+
+  }
+}
 
 function numVerifica(a,b) {
   for (let i = 0; i < 5 ; i++) {
@@ -30,14 +45,13 @@ function numVerifica(a,b) {
 }
 
 function numInsert(){
-  numA = 5;
-  numB = 12;
-  numC = 24;
-  numD = 36;
-  numE = 48;
-  numInseriti.push(numA,numB,numC,numD,numE)
+  numA = prompt('inserisci numero');
+  if (numRicordati.includes(numA)) {
+    console.log('gia inserito inserire un altro');
+  }else{
+    numInseriti.push(parseInt(numA))
+  }
 }
-
 
 function numGen() {
   R = Math.floor(Math.random()*50)
