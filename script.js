@@ -35,7 +35,7 @@ timeB = document.getElementById('timeBar')
   while (numInseriti.length < numNum) {numInsert(numInseriti)}
   
   // verifica numeri
-  numVerifica(numEstratti,numInseriti)
+  numVerifica(numEstratti,numInseriti,numNum)
 
 // restituisci risultato
   risultato(output,numNum,punteggio,numRicordati);
@@ -53,8 +53,8 @@ function risultato(out,n,punt,ricordati) {
   }
 }
 
-function numVerifica(a,b) {
-  for (let i = 0; i < 5 ; i++) {
+function numVerifica(a,b,n) {
+  for (let i = 0; i < n ; i++) {
     if(a.includes(b[i])){
       punteggio++
       numRicordati.push(b[i])
