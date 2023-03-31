@@ -15,8 +15,8 @@ punteggio = 0;
 timeB = document.getElementById('timeBar')
 
   // genera numeri e stampa
-  while (numEstratti.length < numNum) {numGen(numEstratti)}
-
+  while (numEstratti.length < numNum) {numGen(numEstratti)};
+  output.innerHTML = `${numEstratti}`;
   // time bar
   setTimeout(function(){timeB.style.width = '75vw'},980)
   setTimeout(function(){timeB.style.width = '55vw'},1960)
@@ -77,5 +77,4 @@ function numGen(numEstrt) {
   }else{
     numEstratti.push(R)
   }
-  output.innerHTML = `${numEstrt}`
 }
