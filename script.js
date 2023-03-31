@@ -8,14 +8,33 @@
 let 
 numEstratti = [],
 numInseriti = [];
-
+output = document.querySelector('h1')
 
 for (let i = 0; i < 5; i++) {numGen()}
-console.log(numEstratti)
+
+numInsert()
+console.log(numInseriti)
+
+numVerifica(numEstratti,numInseriti)
+function numVerifica(a,b) {
+  
+}
 
 
 
 
+
+
+
+
+function numInsert(){
+  numA = 5;
+  numB = 12;
+  numC = 24;
+  numD = 36;
+  numE = 48;
+  numInseriti.push(numA,numB,numC,numD,numE)
+}
 
 
 function numGen() {
