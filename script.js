@@ -13,20 +13,30 @@ numInseriti = [];
 numRicordati = [] ;
 punteggio = 0;
 
-// genera numeri
-while (numEstratti.length < numNum) {numGen()}
-console.log(numEstratti)
 
-// inserisci numeri
-while (numInseriti.length < numNum) {
-  numInsert() 
-}
-console.log(numInseriti)
+  // genera numeri e stampa
+  while (numEstratti.length < numNum) {numGen(numEstratti)}
+  console.log(numEstratti)
 
-// verifica numeri
-numVerifica(numEstratti,numInseriti)
+//  cancella i numeri dallo schermo
+setTimeout(function () {output.innerHTML=' '},4900)
 
-risultato(output,numNum,punteggio,numRicordati);
+// chiedi i numeri che ricorda
+setTimeout(function(){
+  // inserisci numeri
+  while (numInseriti.length < numNum) {
+    numInsert() 
+  }
+  console.log(numInseriti)
+  
+  // verifica numeri
+  numVerifica(numEstratti,numInseriti)
+
+// restituisci risultato
+  risultato(output,numNum,punteggio,numRicordati);
+},5000)
+
+
 function risultato(out,n,punt,ricordati) {
   if (ricordati == 0){out.innerHTML =`non hai ricordato nessun numero`}
   else {
@@ -53,10 +63,11 @@ function numInsert(){
   }
 }
 
-function numGen() {
+function numGen(numEstrt) {
   R = Math.floor(Math.random()*50)
   if (numEstratti.includes(R)){
   }else{
     numEstratti.push(R)
   }
+  output.innerHTML = `${numEstrt}`
 }
