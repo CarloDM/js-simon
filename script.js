@@ -17,16 +17,10 @@ timeB = document.getElementById('timeBar')
   // genera numeri e stampa
   while (numEstratti.length < numNum) {numGen(numEstratti)};
   output.innerHTML = `${numEstratti}`;
-  // time bar
-  setTimeout(function(){timeB.style.width = '75vw'},980)
-  setTimeout(function(){timeB.style.width = '55vw'},1960)
-  setTimeout(function(){timeB.style.width = '35vw'},2940)
-  setTimeout(function(){timeB.style.width = '10vw'},3920)
-  setTimeout(function(){timeB.style.width = '0vw'},4900)
-  
-//  cancella i numeri dallo schermo
-  setTimeout(function () {output.innerHTML=' '},4900)
 
+//  cancella i numeri dallo schermo
+  setTimeout(function () {output.innerHTML=' '},4900);
+  
 
 // chiedi i numeri che ricorda --------------------->
   setTimeout(function(){
@@ -43,13 +37,21 @@ timeB = document.getElementById('timeBar')
 //                  <----------fine-------------------
 
 
+  // time bar animation---------------------------------
+  setTimeout(function(){timeB.style.width = '75vw'},980)
+  setTimeout(function(){timeB.style.width = '55vw'},1960)
+  setTimeout(function(){timeB.style.width = '35vw'},2940)
+  setTimeout(function(){timeB.style.width = '10vw'},3920)
+  setTimeout(function(){timeB.style.width = '0vw'},4900)
+// ------------------------------------------------  
+
 
 // -----------funzioni----------------
 
 function risultato(out,n,punt,ricordati) {
   if (ricordati == 0){out.innerHTML =`non hai ricordato nessun numero`}
   else {
-    out.innerHTML =`hai ricordato ${punt} numeri su ${n} <br> i numeri ricordati sono: <br> ${ricordati}`
+    out.innerHTML =`hai ricordato ${punt} numeri su ${n} <br><br> ${ricordati}`
   }
 }
 
